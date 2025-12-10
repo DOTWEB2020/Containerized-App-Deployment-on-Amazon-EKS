@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""
+Architect's Demo Application
+Simple Flask app showing EKS deployment principles
+"""
+
+from flask import Flask, jsonify
+import socket
+import datetime
+import os
+import platform
+
+app = Flask(__name__)
+
+# Get container hostname
+container_hostname = socket.gethostname()
+
+@app.route('/')
+def home():
+    """Main endpoint showing app info"""
+    return jsonify({
+        'application': 'Architect EKS Demo',
+        'version': '1.0.0',
+        'hostname': container_hostname,
+        'timestamp': datetime.datetime.now().isoformat(),
+        'environment': os.getenv('ENVIRONMENT', 'development'),
+        'architect_principles': [
+            'Simplicity over complexity',
+            'Managed services over self-managed',
+            'Cost-awareness in design',
+            'Scalability by default'
+        ],
+        'status': 'operational'
+    })
+
+@app.route('/health')
+def health():
+    """Health check endpoint"""
+    return jsonify({
+        'status': 'healthy',
+        'service': 'architect-demo',
+        'timestamp': datetime.datetime.now().isoformat(),
+        'checks': {
+            'disk': 'ok',
+            'memory': 'ok',
+            'network': 'ok'
+        }
+    })
+
+@app.route('/architect')
+def architect_insights():
+    """Architecture insights endpoint"""
+    return jsonify({
+        'architecture_approach': 'Strategic Simplification',
+        'aws_services_used': [
+            'EKS (Managed Kubernetes)',
+            'ECR (Container Registry)',
+            'EC2 (Worker Nodes)',
+            'ELB (Load Balancer)'
+        ],
+        'kubernetes_objects': [
+            'Namespace (isolation)',
+            'Deployment (replica management)',
+            'Service (load balancing)',
+            'Pod (container runtime)'
+        ],
+        'design_decisions': [
+            'Using eksctl for smart defaults',
+            'Leveraging AWS managed services',
+            'Focus on core concepts',
+            'Minimal viable demonstration'
+        ],
+        'why_simple': 'Complex systems are best explained through simple demonstrations'
+    })
+
+@app.route('/info')
+def system_info():
+    """System information endpoint"""
+    return jsonify({
+        'python_version': platform.python_version(),
+        'platform': platform.platform(),
+        'container_id': container_hostname,
+        'memory_limit': os.getenv('MEMORY_LIMIT', 'Not set'),
+        'cpu_limit': os.getenv('CPU_LIMIT', 'Not set')
+    })
+
+@app.route('/ready')
+def readiness():
+    """Readiness probe endpoint"""
+    return jsonify({
+        'ready': True,
+        'timestamp': datetime.datetime.now().isoformat()
+    }), 200
+
+@app.route('/live')
+def liveness():
+    """Liveness probe endpoint"""
+    return jsonify({
+        'alive': True,
+        'timestamp': datetime.datetime.now().isoformat()
+    }), 200
+
+if __name__ == '__main__':
+    # Get port from environment or default to 8080
+    port = int(os.getenv('PORT', 8080))
+    app.run(host='0.0.0.0', port=port, debug=False)
