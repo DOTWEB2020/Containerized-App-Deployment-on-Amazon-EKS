@@ -31,7 +31,6 @@ This "failure" scenario actually **enhances** the demonstration by showcasing:
 - That production systems require robust error handling
 
   🔗 Full Documentation & Demo
-
 📚 Complete Project Documentation: [[[Notion Page Link]]](https://www.notion.so/Enterprise-Container-Platform-on-Amazon-EKS-Production-Orchestration-2c5afa903f8a80f5b3fee9cb8aa946c0?source=copy_link)
 
 🎥 Video Demonstration: [[Video Demo Link]](https://youtu.be/imz9tSa3WVg?si=orUGleOmmzUTz4ET)
