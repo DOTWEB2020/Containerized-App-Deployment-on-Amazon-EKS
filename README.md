@@ -37,7 +37,10 @@ This "failure" scenario actually **enhances** the demonstration by showcasing:
 
 💻 Source Code: [[GitHub Repository Link]](https://github.com/DOTWEB2020/Containerized-App-Deployment-on-Amazon-EKS)
 
-## Contact
--Name : Adeoye Emmanuel
--Email: Emmanuelofgrace@gmail.com
--GitHub: DOTWEB2020
+## **👤** Author
+**Adeoye Emmanuel** - Solution Architect
+
+**Email:** Emmanuelofgrace@gmail.com
+
+💼 LinkedIn: [[LinkedIn Profile]](www.linkedin.com/in/emmanuel-adeoye-29187bb7)
+
