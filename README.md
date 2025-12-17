@@ -36,4 +36,4 @@ This "failure" scenario actually **enhances** the demonstration by showcasing:
 
 🎥 Video Demonstration: [[Video Demo Link]](https://youtu.be/imz9tSa3WVg?si=orUGleOmmzUTz4ET)
 
-💻 Source Code: [GitHub Repository Link]
+💻 Source Code: [[GitHub Repository Link]](https://github.com/DOTWEB2020/Containerized-App-Deployment-on-Amazon-EKS)
